@@ -25,3 +25,4 @@ class ModelTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('\BIT703\Moddels\UserModel', $user);
     }
 }
+?>
