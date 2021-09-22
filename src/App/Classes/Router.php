@@ -1,6 +1,6 @@
 <?php
 namespace BIT703\Classes;
-
+use BIT703\Controllers\Error404Controller as Error404Controller;
 /*
  * Class to process requests.
  *
@@ -68,13 +68,10 @@ class Router
         }
         catch (\Exception $e)
         {
-            //TODO Return a 404 page.
+             //still doesnt work TO DO //
             $controller = new Error404Controller('baseMethod');
             $controller->executeMethod($this->request);
-
-
-            //print("<pre>".print_r($e->getMessage(), 1)."</pre>");
-            //die();
+            
         }
         return;
         

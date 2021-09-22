@@ -26,6 +26,11 @@ class RouterTest extends \Codeception\Test\Unit
     }
 
     // tests
+    public function testRouter()
+    {
+        $this->assertInstanceOf('\BIT703\Classes\Router', $this->router);
+    }
+
     public function testHome()
     {
         $this->request['get']['controller'] = 'home';
@@ -33,6 +38,7 @@ class RouterTest extends \Codeception\Test\Unit
         $router = new Router($this->request);
         $this->assertInstanceOf('\BIT703\Controllers\HomeController', $router->getController());
     }
+    
     public function testUserLogin()
     {
         $this->request['get']['controller'] = 'user';
@@ -67,7 +73,7 @@ class RouterTest extends \Codeception\Test\Unit
         $router = new Router($this->request);
         $this->assertInstanceOf('\BIT703\Controllers\ImageController', $router->getController());
     }
-    
+    // tests
     public function testError404()
     {
         $this->expectException('\Exception');
@@ -77,9 +83,10 @@ class RouterTest extends \Codeception\Test\Unit
         $this->assertInstanceOf('\BIT703\Controllers\Error404Controller', $router->getController());
     }
 
+    /*
     public function testSomeFeature()
     {
         $this->assertInstanceOf('\BIT703\Classes\Router', $this->router);
     }
+    */
 }
-?>

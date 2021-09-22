@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Philter - Add colour to your life</title>
+    <meta name="description" content="Image filtering and sharing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/vendor/cssgram.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <header id="header">
+      <div class="container-fliud">
+        <nav id="menu" class="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav ml-md-auto">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/image">Images</a></li>
+                                  <li><a href="/user/login">Login</a></li>
+                  <li><a href="/user/register">Register</a></li>
+                                </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+    <!--end header-->	<div id="main">
+		<div class="container">
+			<div class="row">
+				<div class="text-center">
+					<h2>User Login</h2>
+				</div>
+			</div>
+			<div class="row">
+				<br />
+<b>Fatal error</b>:  Uncaught Error: Class &quot;BIT703\Classes\Messages&quot; not found in C:\xampp\htdocs\www\bit703\module2\src\App\Views\login.php:9
+Stack trace:
+#0 C:\xampp\htdocs\www\bit703\module2\src\App\Classes\Controller.php(122): require()
+#1 C:\xampp\htdocs\www\bit703\module2\src\App\Controllers\UserController.php(32): BIT703\Classes\Controller-&gt;returnView(NULL)
+#2 C:\xampp\htdocs\www\bit703\module2\src\App\Classes\Controller.php(69): BIT703\Controllers\UserController-&gt;login(Array)
+#3 C:\xampp\htdocs\www\bit703\module2\src\App\Classes\Router.php(67): BIT703\Classes\Controller-&gt;executeMethod(Array)
+#4 C:\xampp\htdocs\www\bit703\module2\src\Public\index.php(17): BIT703\Classes\Router-&gt;__construct(Array)
+#5 {main}
+  thrown in <b>C:\xampp\htdocs\www\bit703\module2\src\App\Views\login.php</b> on line <b>9</b><br />

@@ -1,4 +1,6 @@
 <?php
+require(dirname(__FILE__).'/../../src/App/bootstrap.php');
+
 use \BIT703\Models\UserModel as UserModel;
 
 class ModelTest extends \Codeception\Test\Unit
@@ -12,7 +14,9 @@ class ModelTest extends \Codeception\Test\Unit
     protected function _before()
     {
         //TO DO make models
-        //$this->$model = new UserModel();
+        global $codecept_testing;
+        $codecept_testing = true;
+        $this->model = new UserModel();
     }
 
     protected function _after()
@@ -23,7 +27,7 @@ class ModelTest extends \Codeception\Test\Unit
     public function testGetUser()
     {
         $user = $this->model->getUser(1);
-        $this->assertInstanceOf('\BIT703\Moddels\UserModel', $user);
+        $this->assertEquals('Open Polytechnic', $user['name']);
+        $this->assertEquals('test@test.com', $user['email']);
     }
 }
-?>

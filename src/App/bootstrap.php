@@ -4,6 +4,7 @@
  */
 require  'config.php';
 
+
 /*
  * If we are in development, show all errors, otherwise suppress them 
  */
@@ -12,5 +13,5 @@ if (DEV_ENV) {
 } else {
     error_reporting(0);
 }
-require 'utils.php';
 
+require 'utils.php';

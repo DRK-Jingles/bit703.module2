@@ -18,33 +18,13 @@ use BIT703\Classes\Controller;
  */
 class ImageController extends Controller
 {
-    /*
-     * Instantiates the UserModel 
-     * to handle registration
-     * 
-     * @return void
-     */
-    public function register($request)
+    
+    public function baseMethod($request = [])
+    {        
+    }
+    public function add($request = [])
     {
     }
- 
-    /*
-     * Instantiates the UserModel 
-     * to handle logins
-     * 
-     * @return void
-     */
-    public function login($request)
-    {
-    }
- 
-    /*
-     * Logs user out, destroys the session 
-     * and redirection to home
-     * 
-     * @return void
-     */
-    public function logout()
-    {
-    }
+
+    
 }

@@ -1,5 +1,5 @@
 <?php
- 
+
 /* 
  * spl_autoload_register() allows you to register multiple functions 
  * (or static methods from your own Autoload class) 
@@ -7,7 +7,7 @@
  * when a "new Class" is declared. 
  */
 spl_autoload_register(function ($class) {
- 
+
     /*
      *  Project-specific namespace prefix
      */
@@ -26,7 +26,6 @@ spl_autoload_register(function ($class) {
      *  Get the relative class name
      */
     $relative_class = substr($class, $len);
-    print("<pre>".print_r($relative_class, 1)."</pre>");
   
     /*
      *  Replace the namespace prefix with the base directory, replace namespace
@@ -34,9 +33,6 @@ spl_autoload_register(function ($class) {
      *  with .php
      */
     $file = APP_ROOT . str_replace('\\', '/', $relative_class) . '.php';
-    print("<pre>".print_r($file, 1)."</pre>");
-  
-    die();
     
     /*
      *  if the file exists, require it
@@ -44,5 +40,17 @@ spl_autoload_register(function ($class) {
     if (file_exists($file)) {
         require $file;
     }
-  });
-  $router = new \BIT703\Classes\Router();
+});
+
+function generateRandomString($length)
+{ 
+    $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    $charsLength = strlen($characters) -1;
+    $string = "";
+    for($i=0; $i<$length; $i++){
+        $randNum = mt_rand(0, $charsLength);
+        $string .= $characters[$randNum];
+    }
+    return $string;
+}
+  
