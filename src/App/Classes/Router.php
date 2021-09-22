@@ -68,7 +68,7 @@ class Router
         }
         catch (\Exception $e)
         {
-             //still doesnt work TO DO //
+            
             $controller = new Error404Controller('baseMethod');
             $controller->executeMethod($this->request);
             
