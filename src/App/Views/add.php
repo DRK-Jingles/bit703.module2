@@ -9,7 +9,8 @@
 				<?php BIT703\Classes\Messages::displayMessage(); ?>
 			</div>
 			<div class="row">
-				<form id="image-form" method="post" class="col col-sm-8 col-md-6" enctype="multipart/form-data">
+				<!--TODO Something important is missing from this form tag-->
+				<form id="image-form" method="post" class="col col-sm-8 col-md-6">
 					<div class="form-group">
 						<label>Name</label>
 						<input type="text" name="title" class="form-control" />

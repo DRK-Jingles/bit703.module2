@@ -1,14 +1,11 @@
 <?php
 namespace BIT703\Controllers;
- 
-/*
- * These have to be fully namespaced 
- * as they are in a separate namespace
- */
+
 use BIT703\Classes\Controller;
- 
+use BIT703\Models\ImageModel as ImageModel;
+
 /*
- * Class to process home page requests.
+ * Class to process image adding and viewing requests.
  *
  * @package BIT703
  * @license GPL
@@ -18,13 +15,27 @@ use BIT703\Classes\Controller;
  */
 class ImageController extends Controller
 {
-    
-    public function baseMethod($request = [])
-    {        
-    }
-    public function add($request = [])
-    {
-    }
+	/*
+	 * Instantiates the ImageModel
+	 * 
+	 * @return void
+	 */
+	protected function baseMethod($request)
+	{
+		$model = new ImageModel();
+		$this->returnView($model->getImages(), 'image');
+	}
 
-    
+	/*
+	 * Instantiates the ImageModel
+	 * and calls the add method
+	 * 
+	 * @return void
+	 */
+	 //TODO Something is missing
+	protected function add()
+	{
+		$model = new ImageModel();
+		$this->returnView($model->add());
+	}
 }
