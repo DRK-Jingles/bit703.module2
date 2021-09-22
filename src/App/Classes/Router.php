@@ -73,8 +73,8 @@ class Router
             $controller->executeMethod($this->request);
 
 
-            print("<pre>".print_r($e->getMessage(), 1)."</pre>");
-            die();
+            //print("<pre>".print_r($e->getMessage(), 1)."</pre>");
+            //die();
         }
         return;
         

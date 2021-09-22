@@ -11,7 +11,8 @@ class ModelTest extends \Codeception\Test\Unit
     
     protected function _before()
     {
-        $this->$model = new UserModel();
+        //TO DO make models
+        //$this->$model = new UserModel();
     }
 
     protected function _after()

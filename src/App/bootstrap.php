@@ -14,4 +14,3 @@ if (DEV_ENV) {
 }
 require 'utils.php';
 
-?>

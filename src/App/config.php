@@ -18,4 +18,3 @@ if (!defined('DB_HOST')) {
     // Tell this sytem we are in a development environment
     define('DEV_ENV', true);
 }
-?>
