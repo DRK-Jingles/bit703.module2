@@ -29,13 +29,12 @@ class ImageModel extends Model
 	public function getImages()
 	{
 		$images = ['others_images', 'user_images', 'tags'];
-		if (isset($_SESSION['is_logged_in'])) {
-			//TODO include the user ID
+		if (isset($_SESSION['is_logged_in'])) {			
 			$user_id = $_SESSION['user_data']['id'];
-			$this->prepare('SELECT * FROM images WHERE user_id = ORDER BY id DESC LIMIT 24');
-			$images['user_images'] = $this->resultSet();
-			//TODO include the user ID
-			$this->prepare('SELECT * FROM images WHERE user_id != ORDER BY id DESC LIMIT 8');
+			$this->prepare('SELECT * FROM images WHERE user_id = :userid ORDER BY id DESC LIMIT 24');
+			$this->bind(':userid', $user_id);
+            $images['user_images'] = $this->resultSet();
+			$this->prepare('SELECT * FROM images WHERE user_id != :userid ORDER BY id DESC LIMIT 8');
 			$images['others_images'] = $this->resultSet();
 		} else {
 			$this->prepare('SELECT * FROM images ORDER BY id DESC LIMIT 8');
@@ -61,7 +60,7 @@ class ImageModel extends Model
 	 * 
 	 * @return void
 	 */
-	public function add()
+	public function add($request)
 	{
 		if(!isset($_SESSION['is_logged_in'])){
 			header('Location: '.ROOT_URL.'images');
@@ -70,15 +69,14 @@ class ImageModel extends Model
 		// Sanitize POST
 		$post = filter_var_array($request['post'], FILTER_SANITIZE_STRING);
 		// FileUpload will sanitize this for us - yay!
-		$files = $request['files'];
+		$files = filter_var_array($request['files'], FILTER_SANITIZE_STRING);
 		
 		// Return if the form is missing required data
 		if ($post['submit']) {
 			if ($post['title'] == '' 
 				|| $post['filter'] == '' 
 				|| empty($files['file'])){
-				//TODO add the right message
-				Messages::setMessage('', 'error');
+				Messages::setMessage('Please include a title, a filter and a file', 'error');
 				return;
 			}
 			
@@ -108,8 +106,8 @@ class ImageModel extends Model
 			if ($image_insert_id) {
 				$tags = explode(",", $post['tags']);
 				foreach($tags as $tag){
-					//TODO Pass the insert id in
-					$this->insertTag(strtolower(trim($tag)));
+                    $tag = strtolower(trim($tag));
+					$this->insertTag($tag, $image_insert_id);
 				}
 				// Redirect
 				Messages::setMessage('Your image has been added', 'success');

@@ -16,7 +16,7 @@ class UserCest
     {
         $I->amOnPage('/image');
 		//TODO Use the correct CSS class
-        $I->seeElement('.griditem picture');
+        $I->seeElement('.grid-item picture');
     }
 
     // tests
@@ -24,7 +24,7 @@ class UserCest
     {
 		//TODO Something is missing
         $I->amOnPage('/image');
-        $I->seeNumberOfElements('#others-images img');
+        $I->seeNumberOfElements('#others-images img', 8);
     }
 
     // tests
@@ -50,6 +50,15 @@ class UserCest
         $random_string = \generateRandomString(8);
         $I->amOnPage('/user/login');
         //TODO Write the rest of this test
+        $I->fillField('email', 'test@test.com');
+        $I->fillField('password', 'test');
+        $I->click('Submit');
+        $I->click('Upload an Image Now');
+        $I->fillField('title', '');
+        $I->fillField('tags', $random_string);
+        $I->selectOption('filter', 'hudson');
+        $I->attachFile('file', 'test.jpg');
+        $I->click('Submit');
         $I->see('Please include a title, a filter and a file');
     }
 

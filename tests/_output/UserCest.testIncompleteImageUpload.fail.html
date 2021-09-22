@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Philter - Add colour to your life</title>
+    <meta name="description" content="Image filtering and sharing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/vendor/cssgram.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <header id="header">
+      <div class="container-fliud">
+        <nav id="menu" class="navbar navbar-expand-md navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav ml-md-auto">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/image">Images</a></li>
+                                  <li><a href="/">Welcome Open Polytechnic</a></li>
+                  <li><a href="/user/logout">Logout</a></li>
+                                </ul>
+            </div>
+        </nav>
+      </div>
+    </header>
+    <!--end header--><div id="main">
+		<div class="container">
+			<div class="row">
+				<div class="text-center">
+					<h2>Add an image</h2>
+				</div>
+			</div>
+			<div class="row">
+							</div>
+			<div class="row">				
+				<form id="image-form" method="post" class="col col-sm-8 col-md-6" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>Name</label>
+						<input type="text" name="title" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<input type="text" name="description" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Tags - add a comma after each tag.</label>
+						<input type="text" name="tags" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label>Filter</label>
+						<select name="filter" class="custom-select">
+							<option value="_1977">1977</option>
+							<option value="aden">Aden</option>
+							<option value="brannan">Brannan</option>
+							<option value="brooklyn">Brooklyn</option>
+							<option value="clarendon">Clarendon</option>
+							<option value="earlybird">Earlybird</option>
+							<option value="gingham">Gingham</option>
+							<option value="hudson">Hudson</option>
+							<option value="inkwell">Inkwell</option>
+							<option value="kelvin">Kelvin</option>
+							<option value="lark">Lark</option>
+							<option value="lofi">Lo-Fi</option>
+							<option value="maven">Maven</option>
+							<option value="mayfair">Mayfair</option>
+							<option value="moon">Moon</option>
+							<option value="nashville">Nashville</option>
+							<option value="perpetua">Perpetua</option>
+							<option value="reyes">Reyes</option>
+							<option value="rise">Rise</option>
+							<option value="slumber">Slumber</option>
+							<option value="stinson">Stinson</option>
+							<option value="toaster">Toaster</option>
+							<option value="valencia">Valencia</option>
+							<option value="walden">Walden</option>
+							<option value="willow">Willow</option>
+							<option value="xpro2">X-pro II</option>
+						</select>
+					</div>
+					<div id="image-upload" class="form-group">
+						<label>Image</label>
+						<input type="file" class="form-control-file" name="file" />
+					</div>
+					<input class="btn btn-primary" name="submit" type="submit" value="Submit" />
+				</form>
+			</div>
+		</div><!-- /.container -->
+	</div>
+    <!--start footer-->
+    <footer>
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+                <div class="col">
+                    <p>© 2021 Jonathan Smith. All rights reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end footer-->
+
+    <!--start scripts-->
+    <script src="/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="/js/vendor/masonry.min.js"></script>
+    <script src="/js/main.js"></script>
+    <!--end scripts-->
+
+    <!--start GA-->
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>
+        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+        ga('create', 'UA-XXXXX-Y', 'auto'); ga('send', 'pageview')
+    </script>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    <!--end GA-->
+</body>
+</html>

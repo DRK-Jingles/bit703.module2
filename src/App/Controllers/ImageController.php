@@ -20,7 +20,7 @@ class ImageController extends Controller
 	 * 
 	 * @return void
 	 */
-	protected function baseMethod($request)
+	protected function baseMethod($request = [])
 	{
 		$model = new ImageModel();
 		$this->returnView($model->getImages(), 'image');
@@ -33,9 +33,9 @@ class ImageController extends Controller
 	 * @return void
 	 */
 	 //TODO Something is missing
-	protected function add()
+	protected function add($request)
 	{
-		$model = new ImageModel();
-		$this->returnView($model->add());
+		$model = new ImageModel($request);
+		$this->returnView($model->add($request));
 	}
 }
