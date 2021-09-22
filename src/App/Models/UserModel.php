@@ -32,7 +32,7 @@ class UserModel extends Model
 			$password = md5($post['password']);
 
 			if ($post['name'] == '' || $post['email'] == '' || $post['password'] == '') {
-				Messages::setMessage('', 'error');
+				Messages::setMessage('Please fill in all fields', 'error');
 				return;
 			}
 
@@ -40,7 +40,7 @@ class UserModel extends Model
 			$this->bind(':email', $post['email']);
 			$row = $this->single();
 			if ($row) {
-				Messages::setMessage('', 'error');
+				Messages::setMessage('This email has already been registered', 'error');
 				return;
 			}
 
